@@ -76,14 +76,28 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # Programs #
+
   programs.btop = {
   	enable = true;
   	settings = {
-  		color_theme = "gruvboxd_dark_v2";
   		vim_keys = true;
   	};
   };
   
+  programs.kitty = {
+	enable = true;
+  };
+
+  programs.neovim = {
+	enable = true;
+  };
+
+  programs.tmux = {
+	enable = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

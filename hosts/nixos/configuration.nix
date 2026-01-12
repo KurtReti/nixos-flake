@@ -36,6 +36,10 @@
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
+  
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  stylix.image = ./cyberpunk.png;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -114,17 +118,15 @@
   environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
-     gedit
      git
-     neovim
-     alacritty
      thunar
      gh
      hyprland
-     kitty
+     hyprpaper
      waybar
      wofi
      nwg-look
+     vesktop
   ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
