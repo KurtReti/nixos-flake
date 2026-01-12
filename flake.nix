@@ -12,10 +12,17 @@
      stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+
+   let
+   	pkgs = nixpkgs.legacyPackages."x86_64-linux";
+   in
+    {
+    	devShells."x86_64-linux" = {
+		web = import ./devshells/web.nix { inherit pkgs; };
+	};
+
+	nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/nixos/configuration.nix
@@ -31,5 +38,6 @@
         inputs.stylix.nixosModules.stylix 
       ];
     };
-  };
+    };
 }
+
