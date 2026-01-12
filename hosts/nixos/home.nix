@@ -5,6 +5,12 @@
   # manage.
   home.username = "kurt";
   home.homeDirectory = "/home/kurt";
+  programs.bash = {
+  	enable = true;
+  	shellAliases = {
+  		btw = "echo i use nixos btw";
+  	};
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

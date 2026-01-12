@@ -58,6 +58,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -118,6 +120,11 @@
      alacritty
      thunar
      gh
+     hyprland
+     kitty
+     waybar
+     wofi
+     nwg-look
   ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
