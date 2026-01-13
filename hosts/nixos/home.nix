@@ -9,6 +9,9 @@
   	enable = true;
   	shellAliases = {
   		btw = "echo i use nixos btw";
+		create-vite = "npm create vite@latest";
+		nrsf = "sudo nixos-rebuild switch --flake /home/kurt/nixos/#nixos";
+		webdev = "nix develop /home/kurt/nixos/#web";
   	};
   };
 
