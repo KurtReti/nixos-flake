@@ -1,10 +1,14 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-	packages = [ pkgs.nodejs ];
+	packages = [
+	pkgs.nodejs
+	pkgs.mysql84
+	pkgs.mycli
+	];
 
 	shellHook = ''
-		echo "WELCOME TO HELL"
+		(echo "Node Version: "; npm -v) | paste -s -d '  ' 
 	'';
 
 	ENV_VAR = "test";
